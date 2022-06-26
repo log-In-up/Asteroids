@@ -1,9 +1,11 @@
-using UnityEngine;
 using Zenject;
 
-public class ProjectContextInstaller : MonoInstaller
+namespace DependencyInjection
 {
-    public override void InstallBindings()
+    public class ProjectContextInstaller : MonoInstaller
     {
+        public override void InstallBindings()
+        {
+        }
     }
 }
