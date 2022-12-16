@@ -163,6 +163,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: UI_Inventory_Talents_Settings_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 114
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 25, y: 0, z: 25, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7e2cfd52d6aad1458b8ea71809eab37
+      internalID: -1085506038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -174,6 +195,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      UI_Inventory_Talents_Settings_2: -1085506038
       UI_Inventory_Talents_Settings_0: 21300000
       UI_Inventory_Talents_Settings_1: 21300002
   spritePackingTag: 
