@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,19 +16,32 @@ namespace UserInterface
 
         #region Fields
         private Dictionary<UIScreen, ScreenObserver> _screens = null;
+        private Camera _mainCamera = null;
+        #endregion
+
+        #region Properties
+        public Camera MainCamera => _mainCamera;
         #endregion
 
         #region MonoBehaiour API
         private void Awake()
         {
+            DontDestroyOnLoad(gameObject);
+
+            _mainCamera = Camera.main;
+            if (_mainCamera != null)
+            {
+                DontDestroyOnLoad(_mainCamera.gameObject);
+            }
+
             _screens = GetScreens();
         }
-        #endregion
 
         private void Start()
         {
             OpenScreen(UIScreen.SplashScreen);
         }
+        #endregion
 
         #region Public methods
         public void OpenScreen(UIScreen screen)
@@ -37,7 +49,17 @@ namespace UserInterface
             foreach (KeyValuePair<UIScreen, ScreenObserver> userInterfaceScreen in _screens)
             {
                 bool value = screen.Equals(userInterfaceScreen.Key);
+
                 userInterfaceScreen.Value.gameObject.SetActive(value);
+
+                if (value)
+                {
+                    userInterfaceScreen.Value.Activate();
+                }
+                else
+                {
+                    userInterfaceScreen.Value.Deactivate();
+                }
             }
         }
         #endregion

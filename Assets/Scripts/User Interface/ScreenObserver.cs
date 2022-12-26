@@ -6,11 +6,19 @@ namespace UserInterface.Screens
     public abstract class ScreenObserver : MonoBehaviour
     {
         #region Editor fields
+        [Header("Observer base components")]
         [SerializeField] private UICore _uiCore = null;
         #endregion
 
         #region Properties
-        public virtual UIScreen Screen { get; }
+        public abstract UIScreen Screen { get; }
+
+        public UICore UICore => _uiCore;
+        #endregion
+
+        #region Public methods
+        public abstract void Activate();
+        public abstract void Deactivate();
         #endregion
     }
 }

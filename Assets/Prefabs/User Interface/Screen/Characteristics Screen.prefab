@@ -4822,7 +4822,7 @@ GameObject:
   - component: {fileID: 5702528515656745550}
   - component: {fileID: 4487084116621462655}
   m_Layer: 5
-  m_Name: Characteristics Screen (Done)
+  m_Name: Characteristics Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
